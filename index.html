@@ -427,7 +427,7 @@ const EVENTS = [
   { date:"2026-11-19", start:"19:30", end:"21:00", city:"Groningen",  venue:"Café De Sleutel" },
   { date:"2026-11-20", start:"19:30", end:"21:00", city:"Dordrecht",  venue:"Trinitatiskapel" },
   { date:"2026-11-22", start:"19:30", end:"21:00", city:"Zwolle",     venue:"Het Vliegende Paard" },
-  { date:"2026-11-25", start:"19:30", end:"21:00", city:"Rotterdam",  venue:"Ukrainian House" },
+  { date:"2026-11-25", start:"19:30", end:"21:00", city:"Rotterdam",  venue:"Ukrainian House", partner:{ name:"Oekraïens Huis Rotterdam", name_en:"Ukrainian House Rotterdam", url:"https://ukrainianhouse.nl/en/home-en/" } },
 ];
 
 /* Speakers — photo: put a square image in assets/speakers/ and set e.g. photo:"assets/speakers/kido-koenig.jpg".
@@ -479,7 +479,7 @@ function renderEvents(){
       <span class="num">${i+1}</span>
       <div class="date"><div class="w">${esc(d.toLocaleDateString(t.locale,{weekday:"short"}))}</div><div class="d">${d.getDate()}</div><div class="m">${esc(d.toLocaleDateString(t.locale,{month:"short"}).replace(".",""))}</div></div>
       <div><h3>${esc(e.city)}${tag}</h3>
-        <div class="meta"><span>📍 <a href="${maps}" target="_blank" rel="noopener" title="${t.route}">${esc(e.venue)}</a></span><span>🕢 ${time}</span></div>${e.partner ? `<div class="partner">🤝 ${t.partner} <a href="${esc(e.partner.url)}" target="_blank" rel="noopener">${esc(e.partner.name)}</a></div>` : ""}</div>
+        <div class="meta"><span>📍 <a href="${maps}" target="_blank" rel="noopener" title="${t.route}">${esc(e.venue)}</a></span><span>🕢 ${time}</span></div>${e.partner ? `<div class="partner">🤝 ${t.partner} <a href="${esc(e.partner.url)}" target="_blank" rel="noopener">${esc((lang==="en" && e.partner.name_en) || e.partner.name)}</a></div>` : ""}</div>
       <div class="acts">${past?"":`<a class="btn btn-b btn-sm" href="${esc(reg)}"${reg.startsWith("http")?' target="_blank" rel="noopener"':""}>${t.register}</a>
         <a class="btn btn-ghost btn-sm" href="#" data-ics="${i}">+ ${t.cal}</a>`}</div>
     </article>`;
