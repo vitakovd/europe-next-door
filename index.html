@@ -30,7 +30,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Open Sans",system-ui,-apple-system,Segoe UI,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 a{color:var(--blue)}
 h1,h2,h3{line-height:1.15;margin:0 0 .5em;font-weight:800;letter-spacing:-.01em}
 h2{font-size:clamp(28px,4vw,40px)}
@@ -213,7 +213,7 @@ footer a{color:#fff}
     </div>
     <div class="cta">
       <a class="btn btn-y" href="#tour"><span lang="nl">Bekijk de data &amp; meld je aan</span><span lang="en">See dates &amp; register</span></a>
-      <a class="btn btn-o" href="#programma"><span lang="nl">Wat kun je verwachten?</span><span lang="en">What to expect</span></a>
+      <a class="btn btn-o" href="#verwachten"><span lang="nl">Wat kun je verwachten?</span><span lang="en">What to expect</span></a>
     </div>
   </div>
 </section>
@@ -309,12 +309,15 @@ footer a{color:#fff}
   </div>
 </section>
 
-<!-- RULES -->
-<section id="spelregels">
+<!-- WHAT TO EXPECT + HOUSE RULES -->
+<section id="verwachten">
   <div class="wrap">
-    <span class="eyebrow"><span lang="nl">Spelregels</span><span lang="en">House rules</span></span>
+    <span class="eyebrow"><span lang="nl">Wat kun je verwachten?</span><span lang="en">What to expect</span></span>
     <h2><span lang="nl">Een veilige plek om het oneens te zijn</span><span lang="en">A safe place to disagree</span></h2>
-    <div class="rules">
+    <p class="lead" lang="nl">Panelleden gaan met elkaar en met de zaal in gesprek, met volop ruimte voor vragen. Gevoelige onderwerpen kun je anoniem aankaarten via vraagkaarten. Vooraf is er een expositie over de weg naar EU-lidmaatschap, en elke bijeenkomst bevat een cultureel moment uit Oekraïne.</p>
+    <p class="lead" lang="en">Panellists talk with each other and with the audience, with plenty of room for questions. Sensitive topics can be raised anonymously using question cards. Beforehand there is an exhibition on the road to EU membership, and every event includes a Ukrainian cultural moment.</p>
+    <h3 style="margin-top:36px;font-size:18px"><span lang="nl">Spelregels</span><span lang="en">House rules</span></h3>
+    <div class="rules" style="margin-top:16px">
       <div class="rule"><div class="ic">1</div><div>
         <h3><span lang="nl">Onenigheid is welkom</span><span lang="en">Disagreement is welcome</span></h3>
         <p lang="nl">Steun, twijfel en kritiek hebben allemaal een plek.</p><p lang="en">Support, doubt and criticism all have a place.</p></div></div>
@@ -354,12 +357,7 @@ footer a{color:#fff}
         <a class="btn btn-b" href="https://enlargement.ec.europa.eu/enlargement-policy/eu-enlargement-forum-2026_en" target="_blank" rel="noopener"><span lang="nl">Naar het Forum</span><span lang="en">Visit the Forum</span> ↗</a>
       </div>
     </div>
-    <div class="about" id="organisatie">
-      <div>
-        <h3 style="font-size:24px"><span lang="nl">Wat kun je verwachten?</span><span lang="en">What can you expect?</span></h3>
-        <p lang="nl">Panelleden gaan met elkaar en met de zaal in gesprek, met volop ruimte voor vragen. Gevoelige onderwerpen kun je anoniem aankaarten via vraagkaarten. Vooraf is er een expositie over de weg naar EU-lidmaatschap, en elke bijeenkomst bevat een cultureel moment uit Oekraïne.</p>
-        <p lang="en">Panellists talk with each other and with the audience, with plenty of room for questions. Sensitive topics can be raised anonymously using question cards. Beforehand there is an exhibition on the road to EU membership, and every event includes a Ukrainian cultural moment.</p>
-      </div>
+    <div class="about" id="organisatie" style="grid-template-columns:1fr">
       <div class="contact-card">
         <h3>Contact</h3>
         <dl>
