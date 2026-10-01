@@ -150,6 +150,14 @@ nav.links a:hover{color:var(--blue)}
 .sp .role{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:999px;background:var(--soft);color:var(--blue);margin-bottom:12px}
 .sp .role.mod{background:var(--yellow);color:var(--ink)}
 .sp p{font-size:15px;color:var(--muted);margin:0}
+.call{margin-top:28px;border:2px solid var(--yellow);background:#fffbd6;border-radius:var(--r);padding:28px 32px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
+.call h3{font-size:22px;margin-bottom:8px}
+.call p{margin:0 0 6px}
+.call ul{margin:0;padding-left:20px}
+.call li{margin-bottom:4px}
+.call-btn{background:var(--blue);color:#fff;text-decoration:none;border-radius:999px;padding:14px 26px;font-weight:700;text-align:center;white-space:nowrap}
+.call-btn small{display:block;font-weight:600;font-size:12px;opacity:.85}
+@media (max-width:760px){.call{grid-template-columns:1fr;padding:22px}.call-btn{white-space:normal}}
 .sp.more{border-style:dashed;border-color:#b9c4d6;color:var(--muted);display:grid;place-items:center;align-content:center}
 .sp.more .av{background:var(--line);color:var(--muted);box-shadow:none}
 
@@ -330,6 +338,23 @@ footer a{color:#fff}
     <h2><span lang="nl">Wie praat er mee?</span><span lang="en">Who’s joining the conversation?</span></h2>
     <p class="lead"><span lang="nl">Maak kennis met onze moderator en panelleden. Nederlandse en Oekraïense perspectieven, van beleid tot persoonlijke ervaring. Meer panelleden volgen.</span><span lang="en">Meet our moderator and panellists: Dutch and Ukrainian perspectives, from policy to personal experience. More panellists to follow.</span></p>
     <div class="sp-grid" id="speakers-grid"></div>
+    <div class="call">
+      <div>
+        <span class="eyebrow"><span lang="nl">Gezocht</span><span lang="en">Wanted</span></span>
+        <h3><span lang="nl">Word panellid in jouw stad</span><span lang="en">Join the panel in your city</span></h3>
+        <p lang="nl">We breiden het panel uit en zoeken per stad panelleden die hun kennis of ervaring willen delen, bijvoorbeeld:</p>
+        <p lang="en">We are expanding the panel and are looking for panellists in each city who want to share their knowledge or experience, for example:</p>
+        <ul lang="nl">
+          <li>experts op het gebied van EU-uitbreiding, veiligheid, economie, landbouw of de arbeidsmarkt;</li>
+          <li>ondernemers, lokale bestuurders en vertegenwoordigers van maatschappelijke organisaties.</li>
+        </ul>
+        <ul lang="en">
+          <li>experts in EU enlargement, security, the economy, agriculture or the labour market;</li>
+          <li>entrepreneurs, local officials and representatives of civil-society organisations.</li>
+        </ul>
+      </div>
+      <a class="call-btn" href="mailto:info@brandnewukraine.nl?subject=Panellid%20Europe%20Next%20Door"><small><span lang="nl">Interesse? Mail naar</span><span lang="en">Interested? Email</span></small>info@brandnewukraine.nl</a>
+    </div>
   </div>
 </section>
 
