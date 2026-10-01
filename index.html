@@ -264,7 +264,10 @@ footer a{color:#fff}
         <span class="eyebrow"><span lang="nl">De tour</span><span lang="en">The tour</span></span>
         <h2 style="margin:0"><span lang="nl">Acht steden, acht dialogen</span><span lang="en">Eight cities, eight dialogues</span></h2>
       </div>
-      <a class="btn btn-ghost btn-sm" href="#" id="ics-all"><span lang="nl">Alle data in je agenda (.ics)</span><span lang="en">Add all dates to calendar (.ics)</span></a>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn btn-b btn-sm" href="https://docs.google.com/forms/d/e/1FAIpQLScB9E6hdQsqCPVHaE3KUliXFl-3NNIC7LrW89VXcsNj7qlWoA/viewform" target="_blank" rel="noopener"><span lang="nl">Aanmelden</span><span lang="en">Register</span> ↗</a>
+        <a class="btn btn-ghost btn-sm" href="#" id="ics-all"><span lang="nl">Alle data in je agenda (.ics)</span><span lang="en">Add all dates to calendar (.ics)</span></a>
+      </div>
     </div>
     <div class="events" id="events"></div>
   </div>
@@ -412,7 +415,7 @@ footer a{color:#fff}
    Set REGISTER_URL to an external form (Eventbrite, Google Form…)
    or a per-event `register` link. Empty = falls back to e-mail.
    ============================================================ */
-const REGISTER_URL = "";
+const REGISTER_URL = "https://docs.google.com/forms/d/e/1FAIpQLScB9E6hdQsqCPVHaE3KUliXFl-3NNIC7LrW89VXcsNj7qlWoA/viewform";
 const CONTACT_EMAIL = "info@brandnewukraine.nl";
 const EVENTS = [
   { date:"2026-11-07", start:"11:15", end:"12:15", city:"Maastricht", venue:"Lumière", forumDay:true },
