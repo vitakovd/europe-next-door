@@ -151,6 +151,7 @@ nav.links a:hover{color:var(--blue)}
 .sp h3{font-size:19px;margin:0 0 6px}
 .sp .role{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:999px;background:var(--soft);color:var(--blue);margin-bottom:12px}
 .sp .role.mod{background:var(--yellow);color:var(--ink)}
+.sp .city-tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:999px;border:1.5px solid var(--teal);color:var(--teal);margin:0 0 12px 6px}
 .sp p{font-size:15px;color:var(--muted);margin:0}
 .call{margin-top:28px;border:2px solid var(--yellow);background:#fffbd6;border-radius:var(--r);padding:28px 32px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
 .call h3{font-size:22px;margin-bottom:8px}
@@ -460,10 +461,10 @@ const SPEAKERS = [
   { name:"Yana Rudenko", role:"speaker", photo:"assets/speakers/yana-rudenko.jpg",
     bio_nl:"Vertegenwoordiger van het Oekraïense maatschappelijk middenveld. Woont in Kyiv; afgestudeerd aan de Universiteit Leiden met onderzoek naar Duitslands terughoudendheid bij wapensteun aan Oekraïne.",
     bio_en:"Civil-society representative from Ukraine. Lives in Kyiv; Leiden University graduate whose research examined Germany’s hesitancy on arms support to Ukraine." },
-  { name:"Robin Imthorn", role:"speaker", photo:"assets/speakers/robin-imthorn.jpg",
+  { name:"Robin Imthorn", role:"speaker", city:"Maastricht", photo:"assets/speakers/robin-imthorn.jpg",
     bio_nl:"Marinier, bestsellerauteur van Levensvuur en spreker over veerkracht en leiderschap onder druk. Initiatiefnemer van Mission KYIV: een mars van 2.000 km van Den Haag naar Oekraïne voor PTSS-herstel.",
     bio_en:"Marine, bestselling author of Levensvuur and speaker on resilience and leadership under pressure. Initiator of Mission KYIV: a 2,000 km march from The Hague to Ukraine for PTSD recovery." },
-  { name:"Dr. Margarita Jeliazkova", role:"speaker", photo:"assets/speakers/margarita-jeliazkova.jpg",
+  { name:"Dr. Margarita Jeliazkova", role:"speaker", city:"Apeldoorn", photo:"assets/speakers/margarita-jeliazkova.jpg",
     bio_nl:"Politicoloog en adviseur voor taalonderwijs, integratie en de arbeidsmarkt; geeft Nederlandse les aan veel Oekraïners. Maakte in Bulgarije de toetreding tot de EU van dichtbij mee en was gemeenteraadslid en lid van de Euregioraad.",
     bio_en:"Political scientist and adviser on language education, integration and the labour market; teaches Dutch to many Ukrainians. Saw Bulgaria’s accession to the EU up close and served as a municipal councillor and member of the Euregio Council." },
 ];
@@ -536,7 +537,7 @@ function renderSpeakers(){
   document.getElementById("speakers-grid").innerHTML = SPEAKERS.map(s=>{
     const bio = s["bio_"+lang] || s.bio_nl || s.bio_en || L.tbc;
     const av = s.photo ? `<img src="${esc(s.photo)}" alt="${esc(s.name)}" width="120" height="120" loading="lazy" decoding="async">` : esc(initials(s.name));
-    return `<article class="sp"><div class="av">${av}</div><h3>${esc(s.name)}</h3><span class="role${s.role==="moderator"?" mod":""}">${L[s.role]}</span><p>${esc(bio)}</p></article>`;
+    return `<article class="sp"><div class="av">${av}</div><h3>${esc(s.name)}</h3><span class="role${s.role==="moderator"?" mod":""}">${L[s.role]}</span>${s.city ? `<span class="city-tag">${esc(s.city)}</span>` : ""}<p>${esc(bio)}</p></article>`;
   }).join("") + `<div class="sp more"><div><div class="av">+</div><h3>${L.more}</h3><p>${L.moreSub}</p></div></div>`;
 }
 
