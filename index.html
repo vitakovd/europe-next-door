@@ -436,10 +436,10 @@ const REGISTER_URL = "https://docs.google.com/forms/d/e/1FAIpQLScB9E6hdQsqCPVHaE
 const CONTACT_EMAIL = "info@brandnewukraine.nl";
 const EVENTS = [
   { date:"2026-11-07", start:"11:15", end:"12:15", city:"Maastricht", venue:"Lumière", forumDay:true, partner:{ name:"Ukrainian House Maastricht", url:"https://uamaastricht.nl" } },
+  { date:"2026-11-13", start:"21:00", end:"22:00", city:"Groningen",  venue:"USVA (Cultureel Studentencentrum Groningen)", venue_en:"USVA (Groningen Student Cultural Centre)", tag_nl:"Onderdeel van De Nacht van de Democratie", tag_en:"Part of the Night of Democracy" },
   { date:"2026-11-15", start:"19:30", end:"21:00", city:"Nijmegen",   venue:"De Thiemeloods", partner:{ name:"Nijmegen4Ukraine", url:"https://nijmegen4ukraine.nl" } },
   { date:"2026-11-16", start:"19:30", end:"21:00", city:"Tilburg",    venue:"Cinecitta" },
   { date:"2026-11-17", start:"19:30", end:"21:00", city:"Apeldoorn",  venue:"ACEC", partner:{ name:"SDG-groep Apeldoorn", url:"https://sdg-apeldoorn.nl" } },
-  { date:"2026-11-19", start:"19:30", end:"21:00", city:"Groningen",  venue:"Café De Sleutel" },
   { date:"2026-11-20", start:"19:30", end:"21:00", city:"Dordrecht",  venue:"Trinitatiskapel" },
   { date:"2026-11-22", start:"19:30", end:"21:00", city:"Zwolle",     venue:"Het Vliegende Paard" },
   { date:"2026-11-25", start:"19:30", end:"21:00", city:"Rotterdam",  venue:"Oekraïens Huis", venue_en:"Ukrainian House", partner:{ name:"Oekraïens Huis Rotterdam", name_en:"Ukrainian House Rotterdam", url:"https://ukrainianhouse.nl/", url_en:"https://ukrainianhouse.nl/en/home-en/" } },
@@ -454,7 +454,7 @@ const SPEAKERS = [
   { name:"Marijn Markus", role:"speaker", cities:["Nijmegen","Tilburg","Dordrecht","Rotterdam"], photo:"assets/speakers/marijn-markus-2.jpg",
     bio_nl:"Data- en AI-wetenschapper bij Capgemini en socioloog aan Universiteit Utrecht. Deelt met een groot publiek zijn analyses over geopolitiek, technologie en samenleving.",
     bio_en:"Data and AI scientist at Capgemini and sociologist at Utrecht University. Shares his analysis of geopolitics, technology and society with a large audience." },
-  { name:"Vita Kovalenko", role:"speaker", cities:["Maastricht · moderator","Apeldoorn","Groningen","Dordrecht"], photo:"assets/speakers/vita-kovalenko-3.jpg",
+  { name:"Vita Kovalenko", role:"speaker", cities:["Maastricht · moderator","Groningen","Apeldoorn","Dordrecht"], photo:"assets/speakers/vita-kovalenko-3.jpg",
     bio_nl:"Schrijver, Oekraïne-expert en raadslid in Dordrecht. Spreekt sinds 2014 over Oekraïne, desinformatie en mediawijsheid.",
     bio_en:"Writer, Ukraine expert and city councillor in Dordrecht. Has been speaking on Ukraine, disinformation and media literacy since 2014." },
   { name:"Andriy Siromakha", role:"speaker", cities:["Maastricht","Apeldoorn","Zwolle"], photo:"assets/speakers/andriy-siromakha.jpg",
@@ -522,7 +522,7 @@ function renderEvents(){
     const maps = "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(`${e.venue_en || e.venue} ${e.city}`);
     const reg = e.register || REGISTER_URL ||
       `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t.mailSubj(e.city))}&body=${encodeURIComponent(t.mailBody(e.city,long))}`;
-    const tag = past ? `<span class="tag done">${t.done}</span>` : e.forumDay ? `<span class="tag">★ ${t.forum}</span>` : "";
+    const tag = past ? `<span class="tag done">${t.done}</span>` : e.forumDay ? `<span class="tag">★ ${t.forum}</span>` : e.tag_nl ? `<span class="tag">★ ${esc(lang==="en" ? e.tag_en : e.tag_nl)}</span>` : "";
     return `<article class="ev${e.forumDay?" forum":""}${past?" past":""}">
       <span class="num">${i+1}</span>
       <div class="date"><div class="w">${esc(d.toLocaleDateString(t.locale,{weekday:"short"}))}</div><div class="d">${d.getDate()}</div><div class="m">${esc(d.toLocaleDateString(t.locale,{month:"short"}).replace(".",""))}</div></div>
